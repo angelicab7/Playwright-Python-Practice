@@ -39,8 +39,8 @@ def before_each(page: Page):
 """
     Fixture to perform a successful login before each test.
 """
-@pytest.fixture
+@pytest.fixture(scope="session")
 def login(page: Page):
     login_page = LoginPage()
-    login_page.test_click_username_and_password(page)
-    yield
+    login_page.click_username_and_password(page)
+    yield login_page

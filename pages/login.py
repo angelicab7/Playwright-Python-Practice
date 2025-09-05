@@ -3,7 +3,7 @@ from playwright.sync_api import Page, expect
 
 class LoginPage:
 
-    def test_click_username_and_password(self,page: Page):
+    def click_username_and_password(self,page: Page):
         page.get_by_placeholder("Username").fill("standard_user")
         page.get_by_placeholder("Password").fill("secret_sauce")
 
